@@ -34,6 +34,7 @@ var (
 )
 
 func main() {
+	k8sutil.CreateKubeconfigFlag()
 	flag.Parse()
 
 	if *devel {
