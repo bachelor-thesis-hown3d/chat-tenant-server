@@ -12,7 +12,7 @@ RUN go mod download
 
 
 # Copy the go source
-COPY cmd/server cmd/server
+COPY cmd/ cmd/
 COPY pkg/ pkg/
 COPY proto/ proto/
 
@@ -20,7 +20,7 @@ COPY proto/ proto/
 ARG SKAFFOLD_GO_GCFLAGS
 
 # Build
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -gcflags="${SKAFFOLD_GO_GCFLAGS}" -a -o server cmd/server/main.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -gcflags="${SKAFFOLD_GO_GCFLAGS}" -a -o server cmd/main.go
 
 FROM alpine
 ENV GOTRACEBACK=all
