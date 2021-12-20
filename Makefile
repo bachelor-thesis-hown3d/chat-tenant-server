@@ -50,7 +50,7 @@ docker-push: docker-build
 	docker push quay.io/hown3d/chat-api-server:v$(VERSION)
 
 build:
-	go build -o _output/server ./cmd/server/main.go 
+	go build -o _output/server ./cmd/main.go 
 
 fmt:
 	go fmt ./...
